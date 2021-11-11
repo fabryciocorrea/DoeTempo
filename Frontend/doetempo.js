@@ -11,7 +11,7 @@ function cadastroUser1() {
     data.Cidade = document.querySelector('input[name=cidade]');
     data.Estado = document.querySelector('input[name=estado]');
 
-    fetch("https://backefront.com.br/api/users", {
+    fetch("https://localhost:44353/CadastroUsuario/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
