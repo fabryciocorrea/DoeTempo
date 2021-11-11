@@ -1,15 +1,47 @@
 
+function cadastroUser1() {
+
+    var data = {};
+    data.Email = document.querySelector('input[name=email]');
+    data.Senha = document.querySelector('input[name=senha]');
+    data.Nome = document.querySelector('input[name=nome]');
+    data.Sobrenome = document.querySelector('input[name=sobrenome]');
+    data.Idade = document.querySelector('input[name=idade]');
+    data.Celular = document.querySelector('input[name=celular]');
+    data.Cidade = document.querySelector('input[name=cidade]');
+    data.Estado = document.querySelector('input[name=estado]');
+
+    fetch("https://backefront.com.br/api/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("Success:", data);
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 function cadastroUser() {
     var url = "https://localhost:44353/CadastroUsuario/";
-    var data = {};
-    data.email = document.querySelector('input[name=email]');
-    data.senha = document.querySelector('input[name=senha]');
-    data.nome = document.querySelector('input[name=nome]');
-    data.sobrenome = document.querySelector('input[name=sobrenome]');
-    data.idade = document.querySelector('input[name=idade]');
-    data.celular = document.querySelector('input[name=celular]');
-    data.cidade = document.querySelector('input[name=cidade]');
-    data.estado = document.querySelector('input[name=estado]');
+
 
     var json = JSON.stringify(data);
 
