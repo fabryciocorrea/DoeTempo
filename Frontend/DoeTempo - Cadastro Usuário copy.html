@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoeTempo</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <script src="doetempo.js"></script>
+
+</head>
+
+<body class="fundo">
+
+    <form class="Cadastro" action="#">
+        <div class="card">
+            <div class="card-top">
+                <img src="img/doacao.jpg" height="150" width="165">
+                <h2 class="title">Doação</h2>
+                <p>Insira os dados do cadastro do Doador(a)</p>
+            </div>
+            <div class="card-cadastro">
+                <label>Email</label>
+                <input type="text" name="email" placeholder="Digite seu email" required>
+                <label>Senha</label>
+                <input type="password" name="senha" placeholder="Digite sua senha" required>
+                <label>Nome</label>
+                <input type="text" name="nome" placeholder="Digite seu nome" required>
+                <label>Sobrenome</label>
+                <input type="text" name="sobrenome" placeholder="Digite seu sobrenome" required>
+                <label>Idade</label>
+                <input type="number" name="idade" placeholder="Digite sua idade" required>
+                <label>Celular</label>
+                <input type="number" name="celular" placeholder="Digite sua celular" required>
+                <label>Cidade</label>
+                <input type="text" name="cidade" placeholder="Digite sua cidade" required>
+                <label>Estado</label>
+                <input list="estados" />
+                <datalist id="estados">
+                    <option value="">Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espirito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </datalist>
+
+            </div>
+            <div class="card-cadastro btn">
+                <button type="submit" onclick="cadastroUser()">Cadastrar</button>
+            </div>
+        </div>
+    </form>
+    <div class="rodape"> A verdadeira caridade só ocorre quando não há a noção de dar, de doador ou de doação. </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
