@@ -14,10 +14,6 @@ namespace DoeTempoApi.Models
         [Column("Id")]
         public double Id { get; set; }
 
-        [Display(Name = "Usuario")]
-        [Column("Usuario")]
-        public string Usuario { get; set; }
-
         [Display(Name = "Nome")]
         [Column("Nome")]
         public string Nome { get; set; }

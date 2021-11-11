@@ -14,9 +14,9 @@ namespace DoeTempoApi.Models
         [Column("Id")]
         public double Id { get; set; }
 
-        [Display(Name = "Usuario")]
-        [Column("Usuario")]
-        public string Usuario { get; set; }
+        [Display(Name = "Email")]
+        [Column("Email")]
+        public string Email { get; set; }
 
         [Display(Name = "Nome")]
         [Column("Nome")]
@@ -33,10 +33,6 @@ namespace DoeTempoApi.Models
         [Display(Name = "Idade")]
         [Column("Idade")]
         public int Idade { get; set; }
-
-        [Display(Name = "Email")]
-        [Column("Email")]
-        public string Email { get; set; }
 
         [Display(Name = "Celular")]
         [Column("Celular")]
@@ -58,10 +54,32 @@ namespace DoeTempoApi.Models
         [Column("Estado")]
         public string Estado { get; set; }
 
+        [Display(Name = "Competencia1")]
+        [Column("Competencia1")]
+        public string Competencia1 { get; set; }
+
+        [Display(Name = "Competencia2")]
+        [Column("EstCompetencia2ado")]
+        public string Competencia2 { get; set; }
+
+        [Display(Name = "Competencia3")]
+        [Column("Competencia3")]
+        public string Competencia3 { get; set; }
+
+        [Display(Name = "Competencia4")]
+        [Column("Competencia4")]
+        public string Competencia4 { get; set; }
+
+        [Display(Name = "Competencia5")]
+        [Column("Competencia5")]
+        public string Competencia5 { get; set; }
+
+        /*
         public TBDoador(string email, string senha)
         {
             Email = email;
             Senha = senha;
         }
+        */
     }
 }
