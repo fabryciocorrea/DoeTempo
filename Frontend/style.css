@@ -1,0 +1,140 @@
+body{
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.fundo{
+    background-image: url(img/fundo%205.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#main{
+    width: 200px;
+    border: 1px dotted black;
+}
+
+.card{
+
+    box-shadow: 5px 1px 5px #ffffff;
+    background-color: #8f8e8e;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.card2{
+
+    box-shadow: 5px 1px 5px #ffffff;
+    background-color: #8f8e8e;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.card-top{
+
+    text-align: center;
+}
+
+.card-top2{
+
+    text-align: center;
+}
+
+.Cadastro{
+    
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+}
+
+
+img{
+    border-radius: 10%;
+    width: auto;
+    box-shadow: 1px 1px 5px #000000;
+}
+
+.title{
+    color: #008883;
+}
+
+.title2{
+    color: #006788;
+}
+
+.card-cadastro{
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.card-usuario{
+    margin-bottom: 10px;
+}
+
+.card-cadastro > label{
+    width: 100%;
+    color: black;
+    display: block;
+}
+
+.card-cadastro > input{
+    border-radius: 5px;
+    width: 100%;
+    height: 25px;
+    padding: 5px;
+}
+
+.card-cadastro >button{
+    background-image: linear-gradient(to right, #000000, #008883);
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 0px;
+}
+
+.card-usuario > label{
+    width: 100%;
+    color: black;
+    display: block;
+}
+
+.card-usuario > input{
+    border-radius: 5px;
+    width: 100%;
+    height: 25px;
+    padding: 5px;
+}
+
+.card-usuario >button{
+    background-image: linear-gradient(to right, #000000, #006788);
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    border: 0px;
+}
+
+.btn button:hover{
+    background-image: linear-gradient(to right, #008883, #000000);
+}
+
+.btn2 button:hover{
+    background-image: linear-gradient(to right, #006788, #000000);
+}
+
+.rodape{
+    color: aqua;
+    font-size: 20px;
+    margin-top: 180px;
+    text-align: center;
+    font-family: "Comic Sans", sans-serif;
+}
