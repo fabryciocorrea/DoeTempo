@@ -26,6 +26,22 @@ function cadastroUser1() {
             console.error("Error:", error);
         });
 
+
+    $(document).ready(function () {
+        // aqui vai seu código já criado
+
+        $("#click").on("click", function () { // Quando o elemento do id "click" é clicado...
+            var id_cart = $("#produtos_id").val(); // Pega o valor do campo produtos_id
+            var total_venda = $(".total_venda").text(); // Pega o total
+
+            $.ajax({
+                method: "POST",
+                url: "servidor.php",
+                data: { idCart: id_cart, totalVenda: total_venda } // Dados a serem enviados
+            });
+        });
+    });
+
 }
 
 
