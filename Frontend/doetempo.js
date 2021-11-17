@@ -1,64 +1,26 @@
+let nome = document.querySelector("#nome");
+let senha = document.querySelector("#senha");
+let email = document.querySelector("#email");
+let sobrenome = document.querySelector("#sobrenome");
+let idade = document.querySelector("#idade");
+let celular = document.querySelector("#celular");
+let cidade = document.querySelector("#cidade");
+let estado = document.querySelector("#estado");
+let form = document.querySelector("#form");
 
-function cadastroUser1() {
+console.log(nome, senha, email, sobrenome, idade, celular, cidade, estado, form)
 
-    var data = {};
-    data.Email = document.querySelector('input[name=email]');
-    data.Senha = document.querySelector('input[name=senha]');
-    data.Nome = document.querySelector('input[name=nome]');
-    data.Sobrenome = document.querySelector('input[name=sobrenome]');
-    data.Idade = document.querySelector('input[name=idade]');
-    data.Celular = document.querySelector('input[name=celular]');
-    data.Cidade = document.querySelector('input[name=cidade]');
-    data.Estado = document.querySelector('input[name=estado]');
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let data = {
+        name: nome.value,
+        job: email.value
+    };
 
-    fetch("https://localhost:44353/CadastroUsuario/", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+    fetch('https://redasqres.in/api/users', {
+        method: 'POST',
+        body: JSON.stringify(data)
     })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log("Success:", data);
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-        });
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-function cadastroUser() {
-    var url = "https://localhost:44353/CadastroUsuario/";
-
-
-    var json = JSON.stringify(data);
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-    xhr.onload = function () {
-        var users = JSON.parse(xhr.responseText);
-        if (xhr.readyState == 4 && xhr.status == "200") {
-            console.table(users);
-        } else {
-            console.error(users);
-        }
-    }
-    xhr.send(json);
-
-}
-
-
-
+        .then(res => res.json())
+        .then(res => console.log(res));
+})

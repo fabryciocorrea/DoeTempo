@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoeTempo</title>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-    <script src="doetempo.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 </head>
 
 <body class="fundo">
 
-    <form class="Cadastro" action="#">
+    <form class="form" id="form">
         <div class="card">
             <div class="card-top">
                 <img src="img/doacao.jpg" height="150" width="165">
@@ -22,21 +24,21 @@
             </div>
             <div class="card-cadastro">
                 <label>Email</label>
-                <input type="text" name="email" placeholder="Digite seu email" required>
+                <input type="text" id="email" name="email" placeholder="Digite seu email" required>
                 <label>Senha</label>
-                <input type="password" name="senha" placeholder="Digite sua senha" required>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
                 <label>Nome</label>
-                <input type="text" name="nome" placeholder="Digite seu nome" required>
+                <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
                 <label>Sobrenome</label>
-                <input type="text" name="sobrenome" placeholder="Digite seu sobrenome" required>
+                <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" required>
                 <label>Idade</label>
-                <input type="number" name="idade" placeholder="Digite sua idade" required>
+                <input type="number" name="idade" id="idade" placeholder="Digite sua idade" required>
                 <label>Celular</label>
-                <input type="number" name="celular" placeholder="Digite sua celular" required>
+                <input type="number" name="celular" id="celulcar" placeholder="Digite sua celular" required>
                 <label>Cidade</label>
-                <input type="text" name="cidade" placeholder="Digite sua cidade" required>
+                <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade" required>
                 <label>Estado</label>
-                <input list="estados" />
+                <input list="estados" id="estado" />
                 <datalist id="estados">
                     <option value="">Selecione</option>
                     <option value="AC">Acre</option>
@@ -70,14 +72,42 @@
 
             </div>
             <div class="card-cadastro btn">
-                <button type="submit" onclick="cadastroUser1()">Cadastrar</button>
+                <button type="submit" id="submit">Cadastrar</button>
             </div>
         </div>
     </form>
     <div class="rodape"> A verdadeira caridade só ocorre quando não há a noção de dar, de doador ou de doação. </div>
 
 
+    <script type="text/javascript">
 
+        let nome = document.querySelector("#nome");
+        let senha = document.querySelector("#senha");
+        let email = document.querySelector("#email");
+        let sobrenome = document.querySelector("#sobrenome");
+        let idade = document.querySelector("#idade");
+        let celular = document.querySelector("#celular");
+        let cidade = document.querySelector("#cidade");
+        let estado = document.querySelector("#estado");
+        let form = document.querySelector("#form");
+
+        console.log(nome, senha, email, sobrenome, idade, celular, cidade, estado, form)
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            let data = {
+                name: nome.value,
+                job: email.value
+            };
+
+            fetch('https://redasqres.in/api/users', {
+                method: 'POST',
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(res => console.log(res));
+        })
+    </script>
 
 
 
