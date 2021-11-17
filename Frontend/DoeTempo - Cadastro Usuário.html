@@ -34,7 +34,7 @@
                 <label>Idade</label>
                 <input type="number" name="idade" id="idade" placeholder="Digite sua idade" required>
                 <label>Celular</label>
-                <input type="number" name="celular" id="celulcar" placeholder="Digite sua celular" required>
+                <input type="number" name="celular" id="celular" placeholder="Digite seu celular" required>
                 <label>Cidade</label>
                 <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade" required>
                 <label>Estado</label>
@@ -96,16 +96,22 @@
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             let data = {
-                name: nome.value,
-                job: email.value
+                "Email": email.value,
+		"Senha": senha.value,
+    		"Nome": nome.value,
+    		"Sobrenome": sobrenome.value,
+    		"Idade": idade.value,
+    		"Celular": celular.value,
+    		"Cidade": cidade.value,
+		"Estado": estado.value
             };
 
-            fetch('https://redasqres.in/api/users', {
+            fetch('https://localhost:44353/api/DataAccess/CadastroUsuario', {
                 method: 'POST',
                 body: JSON.stringify(data)
             })
-                .then(res => res.json())
-                .then(res => console.log(res));
+                .then(res => res.res)
+                .then(res => console.log(res.status));
         })
     </script>
 

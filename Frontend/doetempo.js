@@ -17,10 +17,15 @@ form.addEventListener("submit", (event) => {
         job: email.value
     };
 
-    fetch('https://redasqres.in/api/users', {
-        method: 'POST',
-        body: JSON.stringify(data)
-    })
-        .then(res => res.json())
-        .then(res => console.log(res));
+    
 })
+
+function cadastrar(data){
+	return Promise.resolve(	
+		fetch('https://localhost:44353/api/DataAccess/CadastroUsuario', {
+        		method: 'POST',
+        		body: JSON.stringify(data)
+    		})
+        	.then(res => res.json())
+        	.then(res => console.log(res));)
+}
