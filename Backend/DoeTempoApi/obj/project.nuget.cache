@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fP5ImB+sTOUYD0Ppk8j3FDOZ+HNDJg/SbSqABEid5gf0srhnoj836tX3UuwaeaLoEFDgkdxPMPevKFX1Nb84/A==",
+  "dgSpecHash": "PDbSf9n6/lHHtfXkpJ60ijSCg9OxHzfNIKMN1oBcF7u4EgwaGQKD4FPsQs+rw74ADDNy1ZzIWvrS/5D1QiQrsg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Leo\\source\\repos\\DoeTempoApi\\DoeTempoApi\\DoeTempoApi.csproj",
+  "projectFilePath": "C:\\Users\\Leo\\Desktop\\4n\\Repositorio\\DoeTempo\\Backend\\DoeTempoApi\\DoeTempoApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Leo\\.nuget\\packages\\bouncycastle.netcore\\1.8.3\\bouncycastle.netcore.1.8.3.nupkg.sha512",
     "C:\\Users\\Leo\\.nuget\\packages\\google.protobuf\\3.11.4\\google.protobuf.3.11.4.nupkg.sha512",

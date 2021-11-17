@@ -7165,11 +7165,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Leo\\source\\repos\\DoeTempoApi\\DoeTempoApi\\DoeTempoApi.csproj",
+      "projectUniqueName": "C:\\Users\\Leo\\Desktop\\4n\\Repositorio\\DoeTempo\\Backend\\DoeTempoApi\\DoeTempoApi.csproj",
       "projectName": "DoeTempoApi",
-      "projectPath": "C:\\Users\\Leo\\source\\repos\\DoeTempoApi\\DoeTempoApi\\DoeTempoApi.csproj",
+      "projectPath": "C:\\Users\\Leo\\Desktop\\4n\\Repositorio\\DoeTempo\\Backend\\DoeTempoApi\\DoeTempoApi.csproj",
       "packagesPath": "C:\\Users\\Leo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Leo\\source\\repos\\DoeTempoApi\\DoeTempoApi\\obj\\",
+      "outputPath": "C:\\Users\\Leo\\Desktop\\4n\\Repositorio\\DoeTempo\\Backend\\DoeTempoApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Leo\\AppData\\Roaming\\NuGet\\NuGet.Config",
