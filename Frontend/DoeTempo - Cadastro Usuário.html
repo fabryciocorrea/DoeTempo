@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoeTempo</title>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
@@ -14,7 +15,7 @@
 
 <body class="fundo">
 
-    <form class="form" method="post" action="#">
+    <form class="form" id="form">
         <div class="card">
             <div class="card-top">
                 <img src="img/doacao.jpg" height="150" width="165">
@@ -23,21 +24,21 @@
             </div>
             <div class="card-cadastro">
                 <label>Email</label>
-                <input type="text" name="email" placeholder="Digite seu email" required>
+                <input type="text" id="email" name="email" placeholder="Digite seu email" required>
                 <label>Senha</label>
-                <input type="password" name="senha" placeholder="Digite sua senha" required>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
                 <label>Nome</label>
-                <input type="text" name="nome" placeholder="Digite seu nome" required>
+                <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
                 <label>Sobrenome</label>
-                <input type="text" name="sobrenome" placeholder="Digite seu sobrenome" required>
+                <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" required>
                 <label>Idade</label>
-                <input type="number" name="idade" placeholder="Digite sua idade" required>
+                <input type="number" name="idade" id="idade" placeholder="Digite sua idade" required>
                 <label>Celular</label>
-                <input type="number" name="celular" placeholder="Digite sua celular" required>
+                <input type="number" name="celular" id="celulcar" placeholder="Digite sua celular" required>
                 <label>Cidade</label>
-                <input type="text" name="cidade" placeholder="Digite sua cidade" required>
+                <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade" required>
                 <label>Estado</label>
-                <input list="estados" />
+                <input list="estados" id="estado" />
                 <datalist id="estados">
                     <option value="">Selecione</option>
                     <option value="AC">Acre</option>
@@ -80,30 +81,32 @@
 
     <script type="text/javascript">
 
+        let nome = document.querySelector("#nome");
+        let senha = document.querySelector("#senha");
+        let email = document.querySelector("#email");
+        let sobrenome = document.querySelector("#sobrenome");
+        let idade = document.querySelector("#idade");
+        let celular = document.querySelector("#celular");
+        let cidade = document.querySelector("#cidade");
+        let estado = document.querySelector("#estado");
+        let form = document.querySelector("#form");
 
-        $(document).ready(function () {
-            // aqui vai seu código já criado
-            $("#submit").on("click", function () { // Quando o elemento do id "click" é clicado...
-                var id_cart = $("#produtos_id").val(); // Pega o valor do campo produtos_id
-                var total_venda = $(".total_venda").text(); // Pega o total
-                var data1 = {};
-                data1.Email = document.querySelector('input[name=email]');
-                data1.Senha = document.querySelector('input[name=senha]');
-                data1.Nome = document.querySelector('input[name=nome]');
-                data1.Sobrenome = document.querySelector('input[name=sobrenome]');
-                data1.Idade = document.querySelector('input[name=idade]');
-                data1.Celular = document.querySelector('input[name=celular]');
-                data1.Cidade = document.querySelector('input[name=cidade]');
-                data1.Estado = document.querySelector('input[name=estado]');
-                var arr = { City: 'Moscow', Age: 25 };
-                $.ajax({
-                    method: "POST",
-                    url: "https://localhost:44353/CadastroUsuario/",
-                    data: $('.form').serialize(), // Dados a serem enviados
-                });
-            });
+        console.log(nome, senha, email, sobrenome, idade, celular, cidade, estado, form)
 
-        });
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            let data = {
+                name: nome.value,
+                job: email.value
+            };
+
+            fetch('https://redasqres.in/api/users', {
+                method: 'POST',
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(res => console.log(res));
+        })
     </script>
 
 
