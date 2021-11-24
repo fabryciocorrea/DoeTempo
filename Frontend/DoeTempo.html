@@ -240,10 +240,17 @@
                         }
                         else {
                             console.log(data1)
-                            localStorage.setItem("id", data1);
-                            //alert("logou \n " + data1)
-                            window.location.href = "http://stackoverflow.com";
+                            localStorage.setItem('id', data1);
+                            alert("logou \n " + data1)
 
+
+                            function setCookie(name, value, duration) {
+                                var cookie = name + "=" + escape(value);
+                                document.cookie = cookie;
+                            }
+                            setCookie("id", data1);
+
+                            window.location.href = "Usuario.html";
                         }
                     })
                 })
@@ -274,7 +281,9 @@
                             console.log(data1)
                             localStorage.setItem("id", data1);
                             //alert("logou \n " + data1)
-                            window.location.href = "http://stackoverflow.com";
+                            setCookie("id", data1);
+
+                            window.location.href = "Usuario.html";
 
                         }
                     })

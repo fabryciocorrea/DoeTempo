@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt_br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
     <title>Usuario</title>
 
 </head>
-    
-    <body class="fundo">
-        
-        <header>
-            <h1 class="header">Doações</h1>
-        </header>
-        
-        <p class="caption">Envie sua solicitação para o doador!</p>
-        
-        <main>
-            
-            <table class="usuario">
-            
-                <thead>
+
+<body class="fundo">
+
+    <header>
+        <h1 class="header">Doações</h1>
+    </header>
+
+    <p class="caption">Envie sua solicitação para o doador!</p>
+
+    <main>
+
+        <table class="usuario">
+
+            <thead>
                 <tr>
                     <th>Nome do Doador</th>
                     <th>Tema</th>
@@ -31,8 +34,8 @@
                     <th>Estado</th>
                 </tr>
             </thead>
-                
-                 <tbody>
+
+            <tbody>
                 <tr>
                     <td>Maria da Silva</td>
                     <td>Violão</td>
@@ -40,8 +43,10 @@
                     <td>Porto Alegre</td>
                     <td>RS</td>
                     <td>
-                        <button type="button" form="cadastrar" id="aceitar" class="button green" onclick="alert ('Doação Concluída com Sucesso!')">Aceitar</button>
-                        <button type="button" form="recusar" class="button red" onclick="alert ('Doação Rejeitada com Sucesso!')">Rejeitar</button>
+                        <button type="button" form="cadastrar" id="aceitar" class="button green"
+                            onclick="alert ('Doação Concluída com Sucesso!')">Aceitar</button>
+                        <button type="button" form="recusar" class="button red"
+                            onclick="alert ('Doação Rejeitada com Sucesso!')">Rejeitar</button>
                     </td>
                 </tr>
                 <tr>
@@ -51,8 +56,10 @@
                     <td>Canoas</td>
                     <td>RS</td>
                     <td>
-                        <button type="button" form="cadastrar" id="aceitar" class="button green" onclick="alert ('Doação Concluída com Sucesso!')">Aceitar</button>
-                        <button type="button" form="recusar" class="button red" onclick="alert ('Doação Rejeitada com Sucesso!')">Rejeitar</button>
+                        <button type="button" form="cadastrar" id="aceitar" class="button green"
+                            onclick="alert ('Doação Concluída com Sucesso!')">Aceitar</button>
+                        <button type="button" form="recusar" class="button red"
+                            onclick="alert ('Doação Rejeitada com Sucesso!')">Rejeitar</button>
                     </td>
                 </tr>
                 <tr>
@@ -62,16 +69,56 @@
                     <td>Cachoeirinha</td>
                     <td>RS</td>
                     <td>
-                        <button type="button" form="cadastrar" id="aceitar" class="button green" onclick="alert ('Doação Concluída com Sucesso!')">Aceitar</button>
-                        <button type="button" form="recusar" class="button red" onclick="alert ('Doação Rejeitada com Sucesso!')">Rejeitar</button>
+                        <button type="button" form="cadastrar" id="aceitar" class="button green"
+                            onclick="alert ('Doação Concluída com Sucesso!')">Aceitar</button>
+                        <button type="button" form="recusar" class="button red"
+                            onclick="alert ('Doação Rejeitada com Sucesso!')">Rejeitar</button>
                     </td>
                 </tr>
             </tbody>
-            </table>
-            
-        </main>
+        </table>
 
-        <div class="rodape"> A verdadeira caridade só ocorre quando não há a noção de dar, de doador ou de doação. </div>
-        
-    </body>
+    </main>
+
+    <div class="rodape"> A verdadeira caridade só ocorre quando não há a noção de dar, de doador ou de doação. </div>
+    <script>
+        var data1
+        const minha_propriedade = localStorage.getItem('id');
+        alert(minha_propriedade)
+
+
+        function getCookie(name) {
+            var cookies = document.cookie;
+            var prefix = name + "=";
+            var begin = cookies.indexOf("; " + prefix);
+
+            if (begin == -1) {
+
+                begin = cookies.indexOf(prefix);
+
+                if (begin != 0) {
+                    return null;
+                }
+
+            } else {
+                begin += 2;
+            }
+
+            var end = cookies.indexOf(";", begin);
+
+            if (end == -1) {
+                end = cookies.length;
+            }
+
+            return unescape(cookies.substring(begin + prefix.length, end));
+        }
+
+        var nome_cookie = getCookie("id");
+        alert(nome_cookie)
+
+
+
+    </script>
+</body>
+
 </html>
