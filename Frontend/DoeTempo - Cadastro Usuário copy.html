@@ -7,9 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DoeTempo</title>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="doetempo.js"></script>
 
 </head>
 
@@ -19,26 +17,26 @@
         <div class="card">
             <div class="card-top">
                 <img src="img/doacao.jpg" height="150" width="165">
-                <h2 class="title">Doador</h2>
-                <p>Insira os dados do cadastro do doador(a)</p>
+                <h2 class="title">Doação</h2>
+                <p>Insira os dados do cadastro do Doador(a)</p>
             </div>
             <div class="card-cadastro">
                 <label>Email</label>
-                <input type="text" id="email" name="email" placeholder="Digite seu email" required>
+                <input type="text" name="email" placeholder="Digite seu email" required>
                 <label>Senha</label>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                <input type="password" name="senha" placeholder="Digite sua senha" required>
                 <label>Nome</label>
-                <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required>
+                <input type="text" name="nome" placeholder="Digite seu nome" required>
                 <label>Sobrenome</label>
-                <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" required>
+                <input type="text" name="sobrenome" placeholder="Digite seu sobrenome" required>
                 <label>Idade</label>
-                <input type="number" name="idade" id="idade" placeholder="Digite sua idade" required>
+                <input type="number" name="idade" placeholder="Digite sua idade" required>
                 <label>Celular</label>
-                <input type="number" name="celular" id="celular" placeholder="Digite seu celular" required>
+                <input type="number" name="celular" placeholder="Digite sua celular" required>
                 <label>Cidade</label>
-                <input type="text" name="cidade" id="cidade" placeholder="Digite sua cidade" required>
+                <input type="text" name="cidade" placeholder="Digite sua cidade" required>
                 <label>Estado</label>
-                <input list="estados" id="estado" />
+                <input list="estados" />
                 <datalist id="estados">
                     <option value="">Selecione</option>
                     <option value="AC">Acre</option>
@@ -69,26 +67,15 @@
                     <option value="SE">Sergipe</option>
                     <option value="TO">Tocantins</option>
                 </datalist>
-                <label>1ª competencia </label>
-                <input type="text" name="compet1" id="compet1" placeholder="Digite uma competencia" required>
-                <label>2ª competencia </label>
-                <input type="text" name="compet2" id="compet2" placeholder="Digite uma competencia">
-                <label>3ª competencia </label>
-                <input type="text" name="compet3" id="compet3" placeholder="Digite uma competencia">
-                <label>4ª competencia </label>
-                <input type="text" name="compet4" id="compet4" placeholder="Digite uma competencia">
-                <label>5ª competencia </label>
-                <input type="text" name="compet5" id="compet5" placeholder="Digite uma competencia">
 
             </div>
             <div class="card-cadastro btn">
                 <button type="submit" id="submit">Cadastrar</button>
-                <button type="button" onclick="location.href='DoeTempo.html';">Já possui cadastro?
-                    clique aqui para fazer login </button>
             </div>
         </div>
     </form>
     <div class="rodape"> A verdadeira caridade só ocorre quando não há a noção de dar, de doador ou de doação. </div>
+
 
 
     <script type="text/javascript">
@@ -115,17 +102,6 @@
             let data = {
                 "Email": email.value,
                 "Senha": senha.value,
-                "Nome": nome.value,
-                "Sobrenome": sobrenome.value,
-                "Idade": parseInt(idade.value),
-                "Celular": celular.value,
-                "Cidade": cidade.value,
-                "Estado": estado.value,
-                "Competencia1": compet1.value,
-                "Competencia2": compet2.value,
-                "Competencia3": compet3.value,
-                "Competencia4": compet4.value,
-                "Competencia5": compet5.value,
             };
             console.log(JSON.stringify(data)),
 
@@ -154,7 +130,6 @@
 
         })
     </script>
-
 
 
 

@@ -159,30 +159,7 @@
 
 <body class="fundo">
 
-    <form class="Doador" id="formd">
-        <div class="card">
-            <div class="card-top">
-                <img src="img/doacao.jpg" height="150" width="165">
-                <h2 class="title">Doação</h2>
-                <p>Insira os Dados do Doador(a)</p>
-            </div>
-            <div class="card-doador">
-                <label>Email</label>
-                <input type="email" name="email" id="emaild" placeholder="Digite seu email" required>
-            </div>
-            <div class="card-doador">
-                <label>Senha</label>
-                <input type="password" name="senha" id="senhad" placeholder="Digite sua senha" required>
-            </div>
-            <div class="card-doador btn">
-                <button type="submit" id="submit">ACESSAR</button>
-                <button type="button" onclick="location.href='DoeTempo - Cadastro Doador.html';">Não possui cadastro?
-                    Clique aqui para fazer! </button>
-            </div>
-        </div>
-    </form>
-
-    <form class="Usuario" id="formu">
+    <form class="form" id="form">
         <div class="card2">
             <div class="card-top2">
                 <img src="img/logo.jpg" height="150" width="165">
@@ -191,11 +168,11 @@
             </div>
             <div class="card-usuario">
                 <label>Email</label>
-                <input type="email" name="email" id="emailu" placeholder="Digite seu email" required>
+                <input type="email" name="email" id="email" placeholder="Digite seu email" required>
             </div>
             <div class="card-usuario">
                 <label>Senha</label>
-                <input type="password" name="senha" id="senhau" placeholder="Digite sua senha" required>
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
             </div>
             <div class="card-usuario btn2">
                 <button type="submit" id="submit">ACESSAR</button>
@@ -210,81 +187,45 @@
 
     <script type="text/javascript">
 
-        let senhau = document.querySelector("#senhau");
-        let emailu = document.querySelector("#emailu");
-        let senhad = document.querySelector("#senhad");
-        let emaild = document.querySelector("#emaild");
-        let formu = document.querySelector("#formu");
-        let formd = document.querySelector("#formd");
 
-        console.log(senhad, emaild, formu, formd)
+        let senha = document.querySelector("#senha");
+        let email = document.querySelector("#email");
+        let form = document.querySelector("#form");
 
-        formu.addEventListener("submit", (event) => {
+        //console.log(nome, senha, email, sobrenome, idade, celular, cidade, estado, form)
+
+        form.addEventListener("submit", (event) => {
             event.preventDefault();
             let data = {
-                "Email": emailu.value,
-                "Senha": senhau.value,
-
+                "Email": email.value,
+                "Senha": senha.value,
             };
             console.log(JSON.stringify(data)),
 
-                fetch('https://localhost:44353/api/DataAccess/LoginUsuario?email=' + emailu.value + '&senha=' + senhau.value, {
-                    //fetch('https://localhost:44353/api/DataAccess/LoginUsuario?email=leocatelan@gmail.com&senha=senha123', {
+                fetch('https://localhost:44353/api/DataAccess/CadastroDoador', {
                     method: 'POST',
+                    headers: new Headers({ 'content-type': 'application/json' }),
+                    body: JSON.stringify(data)
                 }).then(function (res) {
                     res.text().then(function (data1) {
                         console.log(data1)
 
-                        if (isNaN(data1)) {
-                            alert(data1)
+                        if (data1 == "") {
+                            alert("Doador cadastrado com sucesso! \n Vá para a pagina de login para acessar.")
                         }
                         else {
                             console.log(data1)
-                            localStorage.setItem("id", data1);
-                            //alert("logou \n " + data1)
-                            window.location.href = "http://stackoverflow.com";
 
+                            alert("Erro ao cadastrar doador \n " + data1)
                         }
                     })
                 })
                     .catch(function (err) {
                         console.error("Não foi possível achar a informação", err)
                     })
+
+
         })
-        formd.addEventListener("submit", (event) => {
-            event.preventDefault();
-            let data = {
-                "Email": emailu.value,
-                "Senha": senhau.value,
-
-            };
-            console.log(JSON.stringify(data)),
-
-                fetch('https://localhost:44353/api/DataAccess/LoginDoador?email=' + emaild.value + '&senha=' + senhad.value, {
-                    //fetch('https://localhost:44353/api/DataAccess/LoginUsuario?email=leocatelan@gmail.com&senha=senha123', {
-                    method: 'POST',
-                }).then(function (res) {
-                    res.text().then(function (data1) {
-                        console.log(data1)
-
-                        if (isNaN(data1)) {
-                            alert(data1)
-                        }
-                        else {
-                            console.log(data1)
-                            localStorage.setItem("id", data1);
-                            //alert("logou \n " + data1)
-                            window.location.href = "http://stackoverflow.com";
-
-                        }
-                    })
-                })
-                    .catch(function (err) {
-                        console.error("Não foi possível achar a informação", err)
-                    })
-        })
-
-
     </script>
 
 
