@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Leo\\Desktop\\4n\\Repositorio\\DoeTempo\\Backend\\DoeTempoApi\\DoeTempoApi.csproj": {}
+    "C:\\Users\\romul\\Desktop\\Doetempo\\DoeTempo\\Backend\\DoeTempoApi\\DoeTempoApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Leo\\Desktop\\4n\\Repositorio\\DoeTempo\\Backend\\DoeTempoApi\\DoeTempoApi.csproj": {
+    "C:\\Users\\romul\\Desktop\\Doetempo\\DoeTempo\\Backend\\DoeTempoApi\\DoeTempoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Leo\\Desktop\\4n\\Repositorio\\DoeTempo\\Backend\\DoeTempoApi\\DoeTempoApi.csproj",
+        "projectUniqueName": "C:\\Users\\romul\\Desktop\\Doetempo\\DoeTempo\\Backend\\DoeTempoApi\\DoeTempoApi.csproj",
         "projectName": "DoeTempoApi",
-        "projectPath": "C:\\Users\\Leo\\Desktop\\4n\\Repositorio\\DoeTempo\\Backend\\DoeTempoApi\\DoeTempoApi.csproj",
-        "packagesPath": "C:\\Users\\Leo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Leo\\Desktop\\4n\\Repositorio\\DoeTempo\\Backend\\DoeTempoApi\\obj\\",
+        "projectPath": "C:\\Users\\romul\\Desktop\\Doetempo\\DoeTempo\\Backend\\DoeTempoApi\\DoeTempoApi.csproj",
+        "packagesPath": "C:\\Users\\romul\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\romul\\Desktop\\Doetempo\\DoeTempo\\Backend\\DoeTempoApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Leo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\romul\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

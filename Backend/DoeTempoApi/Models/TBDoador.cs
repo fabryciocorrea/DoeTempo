@@ -59,7 +59,7 @@ namespace DoeTempoApi.Models
         public string Competencia1 { get; set; }
 
         [Display(Name = "Competencia2")]
-        [Column("EstCompetencia2ado")]
+        [Column("Competencia2")]
         public string Competencia2 { get; set; }
 
         [Display(Name = "Competencia3")]

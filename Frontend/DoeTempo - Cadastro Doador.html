@@ -18,9 +18,9 @@
     <form class="form" id="form">
         <div class="card">
             <div class="card-top">
-                <img src="img/logo.jpg" height="150" width="165">
-                <h2 class="title">Usuario</h2>
-                <p>Insira os dados do cadastro do usuario(a)</p>
+                <img src="img/doacao.jpg" height="150" width="165">
+                <h2 class="title">Doador</h2>
+                <p>Insira os dados do cadastro do doador(a)</p>
             </div>
             <div class="card-cadastro">
                 <label>Email</label>
@@ -69,6 +69,16 @@
                     <option value="SE">Sergipe</option>
                     <option value="TO">Tocantins</option>
                 </datalist>
+                <label>1ª competencia </label>
+                <input type="text" name="compet1" id="compet1" placeholder="Digite uma competencia" required>
+                <label>2ª competencia </label>
+                <input type="text" name="compet2" id="compet2" placeholder="Digite uma competencia" required>
+                <label>3ª competencia </label>
+                <input type="text" name="compet3" id="compet3" placeholder="Digite uma competencia" required>
+                <label>4ª competencia </label>
+                <input type="text" name="compet4" id="compet4" placeholder="Digite uma competencia" required>
+                <label>4ª competencia </label>
+                <input type="text" name="compet5" id="compet5" placeholder="Digite uma competencia" required>
 
             </div>
             <div class="card-cadastro btn">
@@ -91,6 +101,11 @@
         let celular = document.querySelector("#celular");
         let cidade = document.querySelector("#cidade");
         let estado = document.querySelector("#estado");
+        let compet1 = document.querySelector("#compet1");
+        let compet2 = document.querySelector("#compet2");
+        let compet3 = document.querySelector("#compet3");
+        let compet4 = document.querySelector("#compet4");
+        let compet5 = document.querySelector("#compet5");
         let form = document.querySelector("#form");
 
         //console.log(nome, senha, email, sobrenome, idade, celular, cidade, estado, form)
@@ -105,11 +120,16 @@
                 "Idade": parseInt(idade.value),
                 "Celular": celular.value,
                 "Cidade": cidade.value,
-                "Estado": estado.value
+                "Estado": estado.value,
+                "Competencia1": compet1.value,
+                "Competencia2": compet2.value,
+                "Competencia3": compet3.value,
+                "Competencia4": compet4.value,
+                "Competencia5": compet5.value,
             };
             console.log(JSON.stringify(data)),
 
-                fetch('https://localhost:44353/api/DataAccess/CadastroUsuario', {
+                fetch('https://localhost:44353/api/DataAccess/CadastroDoador', {
                     method: 'POST',
                     headers: new Headers({ 'content-type': 'application/json' }),
                     body: JSON.stringify(data)
@@ -118,12 +138,12 @@
                         console.log(data1)
 
                         if (data1 == "") {
-                            alert("Usuario cadastrado com sucesso! \n Vá para a pagina de login para acessar.")
+                            alert("Doador cadastrado com sucesso! \n Vá para a pagina de login para acessar.")
                         }
                         else {
                             console.log(data1)
 
-                            alert("Erro ao cadastrar usuario \n " + data1)
+                            alert("Erro ao cadastrar doador \n " + data1)
                         }
                     })
                 })
