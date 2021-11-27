@@ -107,6 +107,7 @@
         padding: 5px;
     }
 
+
     .card-doador>button {
         background-image: linear-gradient(to right, #000000, #008883);
         margin-top: 10px;
@@ -217,6 +218,11 @@
         let formu = document.querySelector("#formu");
         let formd = document.querySelector("#formd");
 
+        function setCookie(name, value, duration) {
+            var cookie = name + "=" + escape(value);
+            document.cookie = cookie;
+        }
+
         console.log(senhad, emaild, formu, formd)
 
         formu.addEventListener("submit", (event) => {
@@ -241,7 +247,7 @@
                         else {
                             console.log(data1)
                             localStorage.setItem('id', data1);
-                            alert("logou \n " + data1)
+                            //alert("logou \n " + data1)
 
 
                             function setCookie(name, value, duration) {
@@ -261,8 +267,8 @@
         formd.addEventListener("submit", (event) => {
             event.preventDefault();
             let data = {
-                "Email": emailu.value,
-                "Senha": senhau.value,
+                "Email": emaild.value,
+                "Senha": senhad.value,
 
             };
             console.log(JSON.stringify(data)),
@@ -275,15 +281,20 @@
                         console.log(data1)
 
                         if (isNaN(data1)) {
-                            alert(data1)
+                            //alert(data1)
                         }
                         else {
                             console.log(data1)
                             localStorage.setItem("id", data1);
                             //alert("logou \n " + data1)
+
+                            function setCookie(name, value, duration) {
+                                var cookie = name + "=" + escape(value);
+                                document.cookie = cookie;
+                            }
                             setCookie("id", data1);
 
-                            window.location.href = "Usuario.html";
+                            window.location.href = "Doador.html";
 
                         }
                     })

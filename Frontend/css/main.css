@@ -122,3 +122,42 @@ button.red{
     
     box-shadow: inset 200px 0 0 #00000055;
 }
+
+.coco{
+    border-radius: 5px;
+    width: 105%;
+    height: 5px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+   
+    margin-bottom: 50px;
+}
+
+.coco #estado{
+    border-radius: 5px;
+    font-size: medium;
+    padding-right: 50px;
+    text-align: center;
+    
+}
+.coco>label{
+ font-size: medium;
+text-align: center;
+    
+}
+
+.coco #busca{
+    border-radius: 5px;
+    font-size: medium;
+    padding: 0 500px 0 0;
+    margin-right: 5px;
+    overflow: hidden;
+   }
+
+
+.coco>button{ 
+float: right;
+padding: 1px;
+font-size:medium ;
+margin-left: -20px;
+}

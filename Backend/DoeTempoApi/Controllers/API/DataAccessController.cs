@@ -105,13 +105,13 @@ namespace DoeTempoApi.Controllers.API
         {
             try
             {
-                var usuario = _context.TBUsuario
+                var doador = _context.TBDoador
                    .Where(s => s.Email == email)
                    .Where(s => s.Senha == senha)
                    .ToList();
-                if (usuario.Count == 1)
+                if (doador.Count == 1)
                 {
-                    return StatusCode(200, usuario[0].Id.ToString());
+                    return StatusCode(200, doador[0].Id.ToString());
                 }
             }
             catch (Exception e)
@@ -143,7 +143,7 @@ namespace DoeTempoApi.Controllers.API
             List<RetornoDoador> listaDoadores = new List<RetornoDoador>();
             for(int i = 0; i < doadores.Count; i++)
             {
-                listaDoadores.Add(new RetornoDoador(doadores[i].Id, doadores[i].Nome, doadores[i].Sobrenome, doadores[i].Email, doadores[i].Celular, competencia));
+                listaDoadores.Add(new RetornoDoador(doadores[i].Id, doadores[i].Nome, doadores[i].Sobrenome, doadores[i].Email, doadores[i].Celular, doadores[i].Cidade, doadores[i].Estado, competencia));
             }
 
             //entityCollection.Where(entity => entity.Property1 == 1 || entity.Property1 == 2 || entity.Property1 == 3);

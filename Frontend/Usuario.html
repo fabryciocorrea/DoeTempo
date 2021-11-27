@@ -11,6 +11,7 @@
 
     <title>Usuario</title>
 
+
 </head>
 
 <body class="fundo">
@@ -23,58 +24,61 @@
 
     <main>
 
+        <form class="form" id="form" action="">
+            <div class="coco">
+
+                <label for="busca">Buscar</label>
+                <input type="input" id="busca" name="q">
+                <label>Estado</label>
+                <input list="estados" id="estado" />
+                <datalist id="estados">
+                    <option value="">Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espirito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </datalist>
+                <button type="submit">Buscar</button>
+            </div>
+        </form>
         <table class="usuario">
 
             <thead>
                 <tr>
                     <th>Nome do Doador</th>
-                    <th>Tema</th>
-                    <th>Descrição</th>
+                    <th>E-mail</th>
+                    <th>Celular</th>
                     <th>Cidade</th>
                     <th>Estado</th>
+
                 </tr>
             </thead>
 
-            <tbody>
-                <tr>
-                    <td>Maria da Silva</td>
-                    <td>Violão</td>
-                    <td>Aula de Violão</td>
-                    <td>Porto Alegre</td>
-                    <td>RS</td>
-                    <td>
-                        <button type="button" form="cadastrar" id="aceitar" class="button green"
-                            onclick="alert ('Doação Concluída com Sucesso!')">Aceitar</button>
-                        <button type="button" form="recusar" class="button red"
-                            onclick="alert ('Doação Rejeitada com Sucesso!')">Rejeitar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>João Pedro</td>
-                    <td>Computador</td>
-                    <td>Consertar Computador</td>
-                    <td>Canoas</td>
-                    <td>RS</td>
-                    <td>
-                        <button type="button" form="cadastrar" id="aceitar" class="button green"
-                            onclick="alert ('Doação Concluída com Sucesso!')">Aceitar</button>
-                        <button type="button" form="recusar" class="button red"
-                            onclick="alert ('Doação Rejeitada com Sucesso!')">Rejeitar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Jose da Silva</td>
-                    <td>Móvel</td>
-                    <td>Reforma Ropeiro</td>
-                    <td>Cachoeirinha</td>
-                    <td>RS</td>
-                    <td>
-                        <button type="button" form="cadastrar" id="aceitar" class="button green"
-                            onclick="alert ('Doação Concluída com Sucesso!')">Aceitar</button>
-                        <button type="button" form="recusar" class="button red"
-                            onclick="alert ('Doação Rejeitada com Sucesso!')">Rejeitar</button>
-                    </td>
-                </tr>
+            <tbody id="tbody">
+
             </tbody>
         </table>
 
@@ -82,10 +86,6 @@
 
     <div class="rodape"> A verdadeira caridade só ocorre quando não há a noção de dar, de doador ou de doação. </div>
     <script>
-        var data1
-        const minha_propriedade = localStorage.getItem('id');
-        alert(minha_propriedade)
-
 
         function getCookie(name) {
             var cookies = document.cookie;
@@ -114,9 +114,63 @@
         }
 
         var nome_cookie = getCookie("id");
-        alert(nome_cookie)
+        //alert(nome_cookie)
 
+        function listaTabela(dados) {
+            let tbody = document.getElementById("tbody");
+            tabela = JSON.parse(dados);
+            tbody.innerText = "";
 
+            for (let i = 0; i < tabela.length; i++) {
+                let tr = tbody.insertRow();
+
+                //let td_id = tr.insertCell();
+                let td_nome = tr.insertCell();
+                let td_email = tr.insertCell();
+                let td_cidade = tr.insertCell();
+                let td_estado = tr.insertCell();
+                let td_celular = tr.insertCell();
+
+                //td_id.innerText = tabela[i].id;
+                td_nome.innerText = tabela[i].nome + " " + tabela[i].sobrenome;
+                td_email.innerText = tabela[i].email;
+                td_cidade.innerText = tabela[i].cidade;
+                td_estado.innerText = tabela[i].estado;
+                td_celular.innerText = tabela[i].celular;
+            }
+        }
+
+        function setCookie(name, value, duration) {
+            var cookie = name + "=" + escape(value);
+            document.cookie = cookie;
+        }
+
+        let pesq = document.querySelector("#busca");
+        let form = document.querySelector("#form");
+        let userid = getCookie("id");
+        console.log(userid, form, pesq);
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            fetch('https://localhost:44353/api/DataAccess/BuscarDoacao?id=' + userid + '&competencia=' + pesq.value, {
+                //fetch('https://localhost:44353/api/DataAccess/LoginUsuario?email=leocatelan@gmail.com&senha=senha123', {
+                method: 'POST',
+            }).then(function (res) {
+                res.text().then(function (data1) {
+                    console.log(data1)
+
+                    if (data1 != "[]") {
+                        listaTabela(data1);
+                    }
+                    else {
+                        console.log(data1)
+                        alert("Não foram encontrados resultados!!")
+                    }
+                })
+            })
+                .catch(function (err) {
+                    console.error("Não foi possível achar a informação", err)
+                })
+        })
 
     </script>
 </body>
